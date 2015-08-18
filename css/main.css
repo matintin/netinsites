@@ -1,0 +1,984 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+*{
+    border: none;
+    outline: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    display: flex;
+    flex-direction:column;
+    min-height: 100vh;
+}
+
+header{
+    /*background-color: #646C6B;*/
+    margin: 0 0 0.5em 0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.container{
+    display: flex;
+    flex-direction:column;
+    flex:0 0 100%;
+}
+.menu,.search{
+    flex:0 0 3em;
+    height: 3em;
+    background-color: rgba(255,255,255,.2);
+    text-align: center;
+    cursor: hand;
+    cursor: pointer;
+}
+.menu .fa,.search .fa{
+    
+    line-height: 2em;
+    font-weight: 100;
+    font-size: 1.5em;
+}
+.logo a{
+    font-size: 1.2em;
+    /*font-weight: 100;*/
+    font-family: Verdana;
+    text-decoration: none;
+    color: #646C6B;
+    line-height: 2.5em;
+}
+#search_box{
+    display: flex;
+    /*flex-wrap:wrap;*/
+    height: 0;
+    overflow: hidden;
+    margin: 0 3em ;
+    transition:all .5s ease;
+}
+#search_box input[type="search"]{
+    flex: 1 0 auto;
+    text-align: center;
+    border: 1px #646C6B solid;
+    height: 2em;
+    font-weight: 100;
+    box-sizing: border-box;
+}
+#search_box input[type="submit"]{
+    flex: 0 0 3em;
+    text-align: center;
+    border-top: 1px #646C6B solid;
+    border-right: 1px #646C6B solid;
+    border-bottom: 1px #646C6B solid;
+    height: 2em;
+ /*   line-height: 2em;*/
+    background-color: #fff;
+    box-sizing: border-box;
+    font-family: helvetica;
+    font-weight: 100;
+}
+#nav{
+    flex:0 0 100%;
+    height:0;
+    background-color: rgb(100,108,107);
+    overflow: hidden;  
+    transition:all .5s ease;
+}
+#nav>ul>li{
+    text-align: left;
+    text-indent: 1em;
+    display: flex;
+    border-top: thin #555 solid;
+}
+
+#nav a{
+    flex:0 0 100%;
+    height: 2em;
+    font-weight: 100;
+    line-height: 2em;
+    text-decoration: none;
+    color: #FFF;
+}
+#nav li:nth-child(3) a{
+    flex:1 0 auto;
+}
+#nav i{
+    flex:0 0 2em;
+    line-height: 1.3em;
+    font-size: 1.5em;
+    cursor: hand;
+    cursor: pointer;
+}
+#nav.show{
+    height: 10em;
+    margin-bottom: 0.5em;
+    padding:1em;
+}
+#nav.show2{
+    height: 15em;
+    margin-bottom: 0.5em;
+    padding:1em;
+}
+#search_box.show{
+    height: 3em;
+}
+#nav_sub{
+    flex:0 0 100%;
+    display: flex;
+    flex-direction:column;
+    height: 0;
+    overflow: hidden;
+    transition:all .5s ease;
+}
+#nav_sub.show{
+    height: 5em;
+}
+#nav_sub li{
+    flex:0 0 100%;
+    display: flex;
+}
+#nav_sub a{
+    flex:0 0 auto;
+    font-size: 0.7em;
+    text-indent: 2em;
+}
+#nav_sub a:hover{
+    color: rgba(255,255,255,.5);
+    font-weight: 100;
+}
+main{
+    /*outline: 1px red solid;*/
+    display: flex;
+    flex-direction:column;
+    flex:0 0 100%;
+}
+.main_text{
+    flex:0 0 100%;
+    text-align: center;
+    margin: 0.5em auto;
+}
+.main_text i{
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    font-weight: 100;
+}
+.main_text p{
+    margin:0 3em 1em 3em;
+
+}
+.services{
+    flex:0 0 100%;
+    margin-bottom: 1em;
+}
+.services li{
+    display: flex;
+    height: 6em;
+    text-align: center;
+    line-height: 6em;
+}
+.services li:nth-child(1){
+    background-color: #88566F;
+}
+.services li:nth-child(2){
+    background-color: #D06723;
+}
+.services li:nth-child(3){
+    background-color: #71B03B;
+}
+.services li:nth-child(4){
+    background-color: #023D41;
+}
+.services a{
+    flex:0 0 100%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 100;
+    font-family: sans-serif;
+}
+.newsletter{
+    flex:0 0 100%;
+    display: flex;
+    flex-direction:column;
+    margin-bottom: 1.5em;
+}
+.newsletter p{
+    flex:0 0 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+.newsletter .news{
+    flex:0 0 50%;
+    margin: 0 auto 0.5em auto;
+}
+.newsletter .news li{
+    display: flex;
+    margin-bottom: 0.2em;
+}
+.newsletter .news a{
+    flex:1 0 1em;
+    margin-left: 1em;
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #000;
+}
+.newsletter .news a:hover{
+    text-decoration: underline;
+}
+.read_more{
+    display: flex;
+    flex-wrap:wrap;
+}
+.read_more p{
+    flex:1 0 auto;
+}
+.read_more a{
+    flex:0 0 6em;
+    font-style: italic;
+    text-decoration: none;
+    color: red;
+    font-size: 0.5em;
+}
+.read_more a:hover{
+    text-decoration: underline;
+}
+footer{
+    display: flex;
+    flex-direction:row;
+    background-color: #646C6B;
+}
+footer p{
+    flex:0 0 100%;
+    text-align: center;
+    font-size: 1em;
+    color:#fff ;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.site_wrap{
+    flex:0 0 100%;
+    display: flex;
+}
+.site_map{
+    flex:0 0 70%;
+    display: flex;
+    flex-wrap:wrap;
+    margin:0 auto 1em auto;
+    color: #fff;
+
+}
+.site_map li{
+    flex:1 0 auto;
+    display: flex;
+   /* justify-content:space-between;   */
+    margin: 0 0.1em;
+    
+}
+.site_map li a{
+    flex:0 0 100%;
+    text-decoration: none;
+    font-size: 0.7em;
+    color: #fff;
+    font-weight: 100;
+    text-align: center;
+}
+
+.site_map li a:hover{
+    text-decoration: underline;
+}
+.photo{
+    display: none;
+}
+#nav_tablet{
+    display: none;
+}
+.main_text_tablet{
+    display: none;
+}
+.newsletter_tablet{
+    display: none;
+}
+/*All devices and mobile phone*/
+
+
+/*for phablet - inclusive*/
+@media only screen and (min-width : 24em) {
+#search_header,.header_empty{
+    display: none;
+}
+
+  
+}
+
+/*for phablet - exclusive*/
+/*@media only screen and (min-width : 24em) and (max-width : 44.99999em) {
+
+}*/
+
+
+/*for tablet - inclusive*/
+@media only screen and (min-width : 44em) {
+
+    .menu,.search{
+        display: none;
+    }
+
+    #search_header{
+        flex:0 0 10em;
+        height: 1.5em;
+        margin-top: 1em;
+        display: flex;
+        flex-wrap:wrap;
+        border: thin #646C6B solid;
+        border-radius: 0.5em;
+        margin-right: 5%;
+    }
+    #search_box{
+        display: none;
+    }
+
+    #search_header input[type="search"]{
+        flex:1 0 1em;
+        padding: 0.3em;
+        border-radius: 0.8em;
+        font-size: 0.8em;
+        text-indent: 0.5em;
+        color: #646C6B;
+        font-weight: 100;
+    }
+
+    #search_header input[type="submit"]{
+        flex:0 0 2em;
+        border-left: thin #646C6B solid;
+
+    }
+    .logo{
+        flex:1 0 10em;
+    }
+   .header_empty{
+        flex:0 0 10em;
+        display: flex;
+        margin-left: 5%;        
+    }
+    #nav_tablet{
+        display: flex;
+    }
+    .nav_tablet_wrap{
+        width: 100%;
+        
+    }
+    .nav_tablet_wrap>ul{
+        flex:0 0 70%;
+        display: flex;
+        justify-content:center;
+        margin-bottom: 0.5em;
+    }
+    .nav_tablet_wrap>ul>li{
+        flex:0 0 7em;
+        text-align: center;
+    }
+    .nav_tablet_wrap>ul>li>a{
+        text-decoration: none;
+        color: #646C6B;
+    }
+    #nav_tablet_sub{
+        flex:0 0 100%;
+        /*display: none;*/
+        height: 0;
+        overflow: hidden;
+        /*margin-bottom: 0.1em;  */  
+        transition:all 0.5s ease;   
+    }
+    #nav_tablet_sub.show{
+        /*display: flex;*/
+        height: 7em;
+    }
+    #nav_tablet_sub ul{
+        flex:0 0 100%;
+        display: flex;
+        flex-direction:column;
+        padding: 0.5em 0;
+        background-color: #646C6B;
+    }
+    #nav_tablet_sub li{
+        flex:0 0 100%;
+        display: flex;
+        justify-content:center;
+        padding: 0.5em 0;
+        
+    }
+    #nav_tablet_sub a{
+        flex:0 0 10em;
+        text-align: center;
+        font-size: 0.8em;
+       /* padding: 0em 0;*/
+        text-decoration: none;
+        color: #fff;
+        font-weight: 100;
+        transition:all 0.5s ease;
+
+    }
+    #nav_tablet_sub a:hover{
+        color: #aaa;
+        transition:all 0.5s ease;
+    }
+    .logo{
+        flex:1 0 auto;
+        text-align: center;
+    }
+    .photo{
+        flex:0 0 100%;
+        /*height: 20em;*/
+        padding-bottom: 60%;
+        display: flex;
+        background-image: url(../img/computer.jpeg);
+        /*background-position: right;
+        background-size: 100% auto;*/
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .main_text_tablet{
+        flex:1 0 80%;
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        text-align: center;
+        margin: 1.5em 5%;
+    }
+    .main_text_tablet i:nth-of-type(1){
+        flex:0 0 2em;
+        font-weight: 100;  
+        height: 3em;      
+    }
+    .main_text_tablet i:nth-of-type(2){
+        flex:0 0 2em;
+        font-weight: 100; 
+        margin-top: 1em;
+    }
+    .main_text_tablet p{
+        flex:0 0 100%;
+    }
+
+
+    .services{
+        flex:0 0 100%;
+        margin-bottom: 2em;
+    }
+    .services ul{
+        flex:1 0 80%;
+        display: flex;
+        flex-wrap:wrap;
+        margin: 0 5%;
+    }
+    .services li{
+        flex:1 0 40%;
+        display: flex;
+        text-align: center;
+    }
+    .services li:nth-child(1){
+        margin-right: 0.2em;
+        margin-bottom: 0.2em;
+    }
+    .services li:nth-child(3){
+        margin-right: 0.2em;
+    }
+    .newsletter_tablet{
+        flex:0 0 100%;
+        display: flex;
+        flex-direction:column;
+        margin-bottom: 1.5em;
+    }
+    .newsletter_tablet p{
+        flex:0 0 100%;
+        margin:0 5% 1em 5%;
+        font-size: 1.5em;
+        text-align: left;
+    }
+    .newsletter_tablet .news_tablet{
+        flex:0 0 100%;
+        margin: 0 5% 0.5em 5%;
+    }
+    .newsletter_tablet .news_tablet li{
+        display: flex;
+        margin-bottom: 0.5em;
+    
+    }
+    .newsletter_tablet .news_tablet a{
+        flex:1 0 1em;
+        text-decoration: none;
+        font-size: 1em;
+        color: #000;
+    }
+    .newsletter_tablet .news_tablet a span{
+        display: block;
+        font-size: 0.7em;
+    }
+    
+    .newsletter_tablet .news_tablet a:hover{
+        text-decoration: underline;
+    }
+    .read_more_tablet{
+        display: flex;
+        flex-wrap:wrap;
+        margin: 0 5%;
+    }
+    .read_more_tablet p{
+        flex:1 0 auto;
+    }
+    .read_more_tablet a{
+        flex:0 0 6em;
+        font-style: italic;
+        text-decoration: none;
+        color: red;
+        font-size: 0.7em;
+    }
+    .read_more_tablet a:hover{
+        text-decoration: underline;
+    }
+    .mail_news{
+        flex:1 0 80%;
+        display: flex;
+        flex-wrap:wrap;
+        margin: 1em 5% 0 5%;
+        justify-content:center;
+    }
+    .mail_news form{
+        flex:0 0 25em;
+        margin: 0 25%;
+        display: flex;
+        height: 2em;
+        padding: 1em 7em;
+        background-color: #2BAA9C;
+    }
+        /*border: thin #646C6B solid;*/
+    
+    .mail_news input[type="text"]{
+        flex:1 0 50%;
+        padding: 0.5em;
+        font-weight: 100;
+        text-indent: 0.5em;
+        font-size: 0.8em;
+        /*border: thin #646C6B solid;*/
+        margin-right: 0.5em;
+    }
+    .mail_news input[type="submit"]{
+        flex:0 0 30%;
+        background-color: #2BAA9C;
+        padding: 0.5em;
+        border: thin #fff solid;
+        color: #fff;
+        font-size: 0.8em;
+        font-weight: 100;
+        transition:all 0.5s ease;
+    }
+    .mail_news input[type="submit"]:hover{
+        background-color: #fff;
+        color: #2BAA9C;
+        transition:all 0.5s ease;
+    }
+    .site_wrap{
+        flex:0 0 100%;
+        display: flex;
+    }
+    .site_map{
+        flex:0 0 30em;
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        color: #fff;
+    }
+    .site_map li{
+      
+        
+    }
+    .site_map li a{
+        
+    }
+    #nav{
+        display: none;
+    }
+    #nav_sub{
+        display: none;
+    }
+    .main_text{
+        display: none;
+    }
+    .newsletter{
+        display: none;
+    }
+    
+
+}
+
+/*for destop - inclusive*/
+@media only screen and (min-width : 64em) {
+
+    #nav{
+        display: none;
+    }
+    #nav_sub{
+        display: none;
+    }
+    .photo{
+        flex:0 0 100%;
+        padding-bottom: 38em;
+        display: flex;
+        background-image: url(../img/computer.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .services{
+        flex:0 0 100%;
+        margin-bottom: 1em;
+    }
+     .services ul{
+        flex:1 0 80%;
+        display: flex;
+        flex-wrap:wrap;
+        margin: 0 5%;
+    }
+    .services li{
+        flex:1 0 20%;
+        display: flex;
+        text-align: center;
+    }
+    
+    .services li:nth-child(2){
+        
+        margin-right: 0.2em;
+    }
+   
+    .services a{
+        flex:0 0 100%;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5em;
+        font-weight: 100;
+        font-family: sans-serif;
+    }
+    .newsletter_tablet{
+        flex:0 0 100%;
+        margin-bottom: 1.5em;
+    }
+    .newsletter_tablet p{
+        flex:0 0 100%;
+        margin:0 5% 1em 5%;
+        font-size: 1.5em;
+        text-align: left;
+    }
+    .newsletter_tablet .news_tablet{
+        flex:1 0 100%;
+        display: flex;
+        flex-wrap:wrap;
+        margin: 0 5% 0.5em 5%;
+    }
+    .newsletter_tablet .news_tablet li{
+        display: flex;
+        flex:1 0 30%;
+        margin:0 0.5em 0.5em 0.5em;
+    }
+    .newsletter_tablet .news_tablet a{
+        flex:1 0 1em;
+        text-decoration: none;
+        font-size: 1em;
+        color: #000;
+    }
+    .newsletter_tablet .news_tablet a span{
+        display: block;
+        font-size: 0.7em;
+    }
+    
+    .newsletter_tablet .news_tablet a:hover{
+        text-decoration: underline;
+    }
+    .read_more_tablet{
+        display: flex;
+        flex-wrap:wrap;
+        margin: 0 5%;
+    }
+    .read_more_tablet p{
+        flex:1 0 auto;
+    }
+    .read_more_tablet a{
+        flex:0 0 6em;
+        font-style: italic;
+        text-decoration: none;
+        color: red;
+        font-size: 0.7em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
