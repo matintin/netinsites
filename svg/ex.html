@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<svg width="500" height="350">
+   
+    <rect id="blue-rectangle" width="5px" height="5px" x="100" y="100" fill="#0099cc"></rect>
+
+    <animate 
+           xlink:href="#blue-rectangle"
+           attributeName="x" 
+           from="50"
+           to="100" 
+           dur="3s"
+           begin="0s"
+           repeatCount="1"
+           fill="freeze" 
+       id="rect-anim"/>
+    <animate 
+           xlink:href="#blue-rectangle"
+           attributeName="y" 
+           from="100"
+           to="150" 
+           stroke="#020202"
+           stroke-width="4.5"
+           stroke-linecap="round"
+            d="M5 100 1250 0"
+           dur="3s"
+           begin="3s"
+           repeatCount="1"
+           fill="none" 
+       id="rect-anim"/>
+    <animate 
+           xlink:href="#blue-rectangle"
+           attributeName="x" 
+           from="100"
+           to="50" 
+           dur="3s"
+           begin="6s"
+           repeatCount="1"
+           fill="freeze" 
+       id="rect-anim"/>
+       <animate 
+           xlink:href="#blue-rectangle"
+           attributeName="y" 
+           from="150"
+           to="100" 
+           dur="3s"
+           begin="9s"
+           repeatCount="1"
+           fill="freeze" 
+       id="rect-anim"/>
+  
+</svg>
+	
+</body>
+</html>
